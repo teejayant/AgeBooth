@@ -1,4 +1,4 @@
-export MODEL_NAME="RunDiffusion/Juggrnaut-XL-v9"
+export MODEL_NAME="RunDiffusion/Juggernaut-XL-v9"
 export OUTPUT_DIR="models/ageLoRA/jgr/10_20_b1"
 export INSTANCE_DIR="data/10-20"
 
@@ -31,6 +31,6 @@ accelerate launch \
   --variant="fp16" \
   --mixed_precision="fp16" \
   --checkpointing_steps=200 \
-  # --use_8bit_adam \
-  # -enable_xformers_memory_efficient_attention \
+  --use_8bit_adam \
+  -enable_xformers_memory_efficient_attention \
   # -push_to_hub \

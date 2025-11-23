@@ -1,7 +1,9 @@
 import argparse
+
 # from InfiniteYou.test_tools import (
-    # add_args
+# add_args
 # )
+
 
 def add_args(parser):
     #parser.add_argument('--id_image', default='./assets/examples/man.jpg', help="""input ID image""")
@@ -32,7 +34,7 @@ def parse_args():
     parser.add_argument(
         "--pretrained_model_name_or_path",
         type=str,
-        default="models/Juggrnaut-XL-v9",
+        default="models/Juggernaut-XL-v9",
         help="Pretrained model path",
     )
 

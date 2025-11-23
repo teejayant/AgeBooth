@@ -34,7 +34,7 @@ This repository provides scripts to **train LoRA adapters** for different age ra
 Use the script **`train_dreambooth_lora_sdxl.sh` / `train_dreambooth_lora_flux.sh`** to train a LoRA for a specific age range.
 You only need to set:
 
-- `MODEL_NAME` → base model path (e.g., `RunDiffusion/Juggrnaut-XL-v9`)
+- `MODEL_NAME` → base model path (e.g., `RunDiffusion/Juggernaut-XL-v9`)
 - `OUTPUT_DIR` → path where the LoRA will be saved
 - `INSTANCE_DIR` → dataset location for the target age group
 
