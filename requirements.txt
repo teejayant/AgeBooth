@@ -1,18 +1,26 @@
-torch
-torchvision
-diffusers
-transformers
-gradio
-opencv-python
-httpx
-timm
-einops
-ftfy
-facexlib
-insightface
-onnxruntime
-onnxruntime-gpu
-accelerate
-SentencePiece
-safetensors
-torchsde
+# Core ML Framework - PyTorch for CUDA 11.8
+torch==2.1.2
+torchvision==0.16.2
+torchaudio==2.1.2
+
+# Diffusion Models
+diffusers==0.24.0
+transformers==4.36.2
+
+# Training Optimization
+accelerate==0.25.0
+peft==0.7.1
+bitsandbytes==0.41.3
+
+# Memory Efficient Attention (compatible with PyTorch 2.1.2)
+xformers==0.0.23.post1
+
+# Image Processing
+Pillow==10.1.0
+opencv-python==4.8.1.78
+
+# Model Storage
+safetensors==0.4.1
+
+# Logging (optional)
+tensorboard==2.15.1
