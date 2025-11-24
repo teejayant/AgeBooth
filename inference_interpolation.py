@@ -161,21 +161,13 @@ def get_age_from_alpha(alpha):
     return int(young_age + (1 - alpha) * (old_age - young_age))
 
 def get_age_prompt(age, gender):
-    """Generate age-specific prompt"""
-    if gender == "m":
-        if age < 25:
-            return f"portrait, realistic, a young man at the age of {age}, youthful features, high quality"
-        elif age < 50:
-            return f"portrait, realistic, a man at the age of {age}, mature features, high quality"
-        else:
-            return f"portrait, realistic, an elderly man at the age of {age}, aged features, high quality"
+    """Generate age-specific prompt focused on handsome Indian man with identity preservation"""
+    if age < 25:
+        return f"RAW photograph portrait of a handsome young Indian man at age {age}, attractive facial features, strong jawline, clear glowing skin, warm brown complexion, thick dark hair neatly styled, expressive brown eyes, well-groomed appearance, charming smile, masculine features, South Asian Indian ethnicity, youthful smooth skin, photogenic face, natural studio lighting, professional photography, ultra sharp details, 8k resolution, handsome model-like appearance, perfect skin texture, symmetric face, maintaining same identity"
+    elif age < 50:
+        return f"RAW photograph portrait of a handsome middle-aged Indian man at age {age}, distinguished attractive features, strong defined jawline, healthy glowing skin, warm brown complexion, dark hair with distinguished grays, expressive brown eyes, well-groomed mature look, confident sophisticated appearance, masculine features, South Asian Indian ethnicity, mature refined skin, photogenic distinguished face, natural studio lighting, professional photography, ultra sharp details, 8k resolution, handsome dignified appearance, perfect skin texture, symmetric face, maintaining same identity"
     else:
-        if age < 25:
-            return f"portrait, realistic, a young woman at the age of {age}, youthful features, high quality"
-        elif age < 50:
-            return f"portrait, realistic, a woman at the age of {age}, mature features, high quality"
-        else:
-            return f"portrait, realistic, an elderly woman at the age of {age}, aged features, high quality"
+        return f"RAW photograph portrait of a handsome elderly Indian man at age {age}, dignified attractive features, strong character-filled face, healthy aging skin, warm brown complexion, distinguished gray/white hair, wise expressive brown eyes, well-groomed elegant look, graceful aging appearance, masculine features with wisdom, South Asian Indian ethnicity, naturally aged skin with dignity, photogenic distinguished elder face, natural studio lighting, professional photography, ultra sharp details, 8k resolution, handsome gracefully aged appearance, perfect skin texture, symmetric face, maintaining same identity"
 
 def main():
     args = parse_args()
@@ -252,7 +244,8 @@ def main():
     
     # Generate images
     print(f"[6/6] Generating age-transformed images ({args.method})...")
-    negative_prompt = "blurry, low quality, distorted, deformed, ugly, bad anatomy"
+    # Maximum identity preservation negative prompt
+    negative_prompt = "blurry, low quality, distorted, deformed, ugly, bad anatomy, different person, changed face, face swap, wrong ethnicity, different identity, altered skin tone, lighter skin, darker skin, changed facial structure, different eyes, different nose, different mouth, different jawline, inconsistent features, caucasian features, european face, chinese face, east asian, anime, cartoon, painting, illustration, drawing, sketch, CGI, 3D render, unrealistic, fake, multiple people, wrong person, identity loss, facial changes"
     
     for idx, alpha in enumerate(tqdm(alphas, desc="Progress")):
         age = get_age_from_alpha(alpha)
