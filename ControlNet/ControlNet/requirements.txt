@@ -1,0 +1,9 @@
+Gradio
+torch
+torchvision
+torchaudio
+diffusers==0.21.4
+opencv-python-headless
+Pillow
+transformers
+accelerate
